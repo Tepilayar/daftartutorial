@@ -28,7 +28,7 @@
 
     .listtutor{
       min-height: 34px;
-      background-color: #FFDDBD;
+      background-color: #efefef;
       border-radius: 5px;
       border-color: #000000;
       border-style: solid;
@@ -36,7 +36,11 @@
       font-size: 18px;
     }
     .judullist{
-      font-size: 30px;
+      font-size: 20px;
+    }
+    .nomorlist{
+      background-color: #ff851a;
+      border-radius: 5px;
     }
 
   </style>
@@ -45,8 +49,8 @@
     <div class="container-fluid">
         <div class="container-md mt-3">
            
-            <div class="d-flex justify-content-center judul">TEPILAYAR</div>
-            <div class="d-flex justify-content-center sub-judul">Konten tentang Android, Iphone dan komputer. Konten Gabut</div>
+            <div class="d-flex justify-content-center judul lh-sm"><span id="element"></span></div>
+            <div class="d-flex justify-content-center sub-judul lh-sm">Konten tentang Android, Iphone dan komputer. Konten Gabut</div>
             <div class="d-flex justify-content-center flex-wrap">
               <img class="m-1" src="image/tiktok.svg" alt="Tiktok Tepilayar">
               <img class="m-1" src="image/instagram.svg" alt="Instagram Tepilayar">
@@ -54,21 +58,62 @@
               <img class="m-1" src="image/facebook.svg" alt="Facebook Tepilayar">
             </div>
             <div class="row justify-content-center mt-3">
-              <div class="row justify-content-center judullist">Daftar Tutorial</div>
+              <div class="row justify-content-center judullist mb-1">DAFTAR TUTORIAL</div>
               <div class="row p-1 col-lg-5 listtutor">
-                <div class="col-1 ">1.</div>
-                <div class="col-11 ">Membuat dynamic island di HP Xiaomi</div>
+                <div class="col-1 my-auto nomorlist p-auto text-center">1</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
               </div>
               <div class="clearfix mt-2"></div>
               <div class="row p-1 col-lg-5 listtutor">
-                <div class="col-1 ">2.</div>
-                <div class="col-11 ">Membuat dynamic island di HP Xiaomi</div>
+                <div class="col-1 my-auto nomorlist p-auto text-center">2</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
               </div>
-
+              <div class="clearfix mt-2"></div>
+              <div class="row p-1 col-lg-5 listtutor">
+                <div class="col-1 my-auto nomorlist p-auto text-center">3</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
+              </div>
+              <div class="clearfix mt-2"></div>
+              <div class="row p-1 col-lg-5 listtutor">
+                <div class="col-1 my-auto nomorlist p-auto text-center">4</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
+              </div>
+              <div class="clearfix mt-2"></div>
+              <div class="row p-1 col-lg-5 listtutor">
+                <div class="col-1 my-auto nomorlist p-auto text-center">5</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
+              </div>
+              <div class="clearfix mt-2"></div>
+              <div class="row p-1 col-lg-5 listtutor">
+                <div class="col-1 my-auto nomorlist p-auto text-center">6</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
+              </div>
+              <div class="clearfix mt-2"></div>
+              <div class="row p-1 col-lg-5 listtutor">
+                <div class="col-1 my-auto nomorlist p-auto text-center">7</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
+              </div>
+              <div class="clearfix mt-2"></div>
+              <div class="row p-1 col-lg-5 listtutor">
+                <div class="col-1 my-auto nomorlist p-auto text-center">8</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
+              </div>
+              <div class="clearfix mt-2"></div>
+              <div class="row p-1 col-lg-5 listtutor">
+                <div class="col-1 my-auto nomorlist p-auto text-center">9</div>
+                <div class="col-11 lh-sm">Membuat dynamic island di HP Xiaomi</div>
+              </div>
             </div>
            
         </div>
     </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      var typed = new Typed('#element', {
+        strings: ['TEPILAYAR'],
+        typeSpeed: 90,
+      });
+    </script>
   </body>
 </html>
