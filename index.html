@@ -72,7 +72,7 @@
             <div class="row justify-content-center mx-auto mt-3 col-11">
               <div class="row justify-content-center judullist mb-1">DAFTAR TUTORIAL</div>
             
-              <div class="d-flex row align-content-center col-lg-5 listtutor">
+              <div class="d-flex row align-content-center col-lg-5 listtutor" >
                 <div class="col-auto my-auto">1</div>
                 <div class="col lh-sm my-auto">Dynamic Island di HP Xiaomi</div>
               </div>
@@ -91,6 +91,13 @@
         strings: ['TEPILAYAR'],
         typeSpeed: 90,
       });
+
+      const divs = document.querySelectorAll('.listtutor');
+
+divs.forEach(el => el.addEventListener('click', event => {
+  console.log(event.target.getAttribute("data_el"));
+}));
+      
     </script>
   </body>
 </html>
