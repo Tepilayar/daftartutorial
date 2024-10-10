@@ -97,11 +97,112 @@
          -webkit-text-fill-color: transparent;
     }
 
-   
+    .product-card {
+      border: 2px solid #d25422;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-size: 1.1rem;
+    }
 
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+    .product-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 15px;
+      flex-wrap: nowrap;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-image {
+      max-width: 80px;
+      height: auto;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 5px;
+      margin-top: 5px;
+    }
+
+    a img {
+      max-width: 50px;
+      height: auto;
+    }
+
+    @media (max-width: 576px) {
+      .product-row {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+      }
+
+      .product-image {
+        max-width: 60px;
+      }
+
+      a img {
+        max-width: 40px;
+      }
+    }
+
+    .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 10px; /* Mengurangi jarak padding */
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* Ukuran font sedikit lebih kecil */
+  color: white;
+  border-radius: 5px;
+}
+
+.btn-tokopedia {
+  background-color: #03ac0e; /* Warna hijau Tokopedia */
+}
+
+.btn-shopee {
+  background-color: #ff5722; /* Warna oranye Shopee */
+}
+
+.btn-tiktok {
+  background-color: #010101; /* Warna hitam TikTok */
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.product-number {
+  width: auto; /* Menghapus ukuran tetap yang membuat lingkaran */
+  height: auto;
+  background-color: transparent; /* Menghapus warna latar belakang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 16px;
+}
   </style>
 </head>
   <body>
+
+    
     <div class="container-fluid">
         <div class="container-md mt-4">
           <div class="d-flex justify-content-center lh-sm">Hai ! Selamat Datang di</div>
@@ -130,6 +231,21 @@
               </div>
             </div>
 
+
+<div class="row mt-3">
+  <!-- Product 1 -->
+  <div id="product-list"></div>
+</div>
+
+
+
+
+
+
+
+
+
+            
             <div class="row justify-content-center mx-auto mt-3 col-11">
               <div class="row justify-content-center judullist mb-1">DAFTAR TUTORIAL</div>
             
@@ -296,7 +412,69 @@
 divs.forEach(el => el.addEventListener('click', event => {
   console.log(event.target.getAttribute("data_el"));
 }));
+
+
+const products = [
+    {
+      "product_name": "MAONO PD100X USB/XLR Dynamic Microphone - Mic PD-100X Podcast Gaming",
+      "store_links": {
+        "tokopedia": "https://www.tokopedia.com/ghmusicgraharaya/maono-pd100x-usb-xlr-dynamic-microphone-mic-pd-100x-podcast-gaming",
+        "shopee": null,
+        "tiktok": null
+      }
+    },
+    {
+      "product_name": "Mic Wireless Mixio B9 buat UKINPPG",
+      "store_links": {
+        "tokopedia": null,
+        "shopee": "https://s.shopee.co.id/9KPvv2yBXx",
+        "tiktok": null
+      }
+    }
+  ];
+
+  // Get the product list container
+  const productList = document.getElementById('product-list');
+
+  // Loop through each product and generate HTML
+  products.forEach((product, index) => {
+    const productDiv = document.createElement('div');
+    productDiv.classList.add('product-card');
+
+    // Gunakan 'index + 1' untuk menampilkan nomor urut
+    let productNumber = index + 1;
+
+    let tokopediaButton = product.store_links.tokopedia 
+      ? `<a href="${product.store_links.tokopedia}" target="_blank"><button class="btn-tokopedia">Tokopedia</button></a>` 
+      : '';
       
+    let shopeeButton = product.store_links.shopee 
+      ? `<a href="${product.store_links.shopee}" target="_blank"><button class="btn-shopee">Shopee</button></a>` 
+      : '';
+      
+    let tiktokButton = product.store_links.tiktok 
+      ? `<a href="${product.store_links.tiktok}" target="_blank"><button class="btn-tiktok">TikTok</button></a>` 
+      : '';
+
+    productDiv.innerHTML = `
+      <div class="product-row">
+        <div class="product-number">
+          <span>${productNumber}</span>
+        </div>
+        <div class="product-info">
+          <h5>${product.product_name}</h5>
+          <div class="button-group">
+            ${tokopediaButton}
+            ${shopeeButton}
+            ${tiktokButton}
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Append the product div to the container
+    productList.appendChild(productDiv);
+  });
     </script>
   </body>
 </html>
